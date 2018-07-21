@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style >
+    .imghead{
+
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+    </style>
+</head>
+<body>
+    {% comment %}{% for d in data%}
+        {{ d.job.offer }}
+
+    {% endfor %}{% endcomment %}
+
+    <table class="boss_list" border="1" cellspacing="0">
+        <tbody>
+            <tr>
+                <td>职位</td>
+                <td>薪酬</td>
+                <td>地点</td>
+                <td>年限</td>
+                <td>学历要求</td>
+                <td>公司</td>
+                <td>行业</td>
+                <td>公司情况</td>
+                <td>人数</td>
+                <td>hr图片</td>
+                <td>hr姓名</td>
+                <td>hr职位</td>
+                <td>发布时间</td>
+            </tr>
+        </tbody>
+        <tbody>
+            {% for d in data%}
+                <tr class="imgheadborder">
+                    <td>{{ d.job.offer }}</td>
+                    <td>{{ d.job.salary }}</td>
+                    <td>{{ d.job.address }}</td>
+                    <td>{{ d.job.yearsIn }}</td>
+                    <td>{{ d.job.background }}</td>
+                    <td>{{ d.company.name }}</td>
+                    <td>{{ d.company.industry }}</td>
+                    <td>{{ d.company.financing }}</td>
+                    <td>{{ d.company.scale }}</td>
+                    <td><img class="imghead" src="{{ d.publisher.img }}"/></td>
+                    <td>{{ d.publisher.name }}</td>
+                    <td>{{ d.publisher.position }}</td>
+                    <td>{{ d.publisher.time }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

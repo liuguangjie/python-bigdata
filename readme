@@ -1,0 +1,7 @@
+
+
+创建 模块的命令
+python manage.py startapp {modules}
+
+
+rplatform 模块是各大平台html数据抓取的招聘信息
