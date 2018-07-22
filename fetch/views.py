@@ -1,13 +1,19 @@
-# -*- coding: UTF-8 -*-
-from django.shortcuts import render
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
+from django.shortcuts import render
+from django.http import HttpResponse
+
+
+def index(request):
+    return HttpResponse(u"欢迎光临 自强学堂!")
 
 import requests
 import bs4
 from bs4 import BeautifulSoup
 import json
 from rplatform.list.boss import html_fetch
-# Create your views here.
+
 
 
 def fetchboss(request):
@@ -20,3 +26,5 @@ def fetchboss(request):
     往 hbase里面写入数据
     """
     return render(request, "index.html", {"data": data})
+
+
